@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+
+  <display-name>ecsite</display-name><!-- プロジェクト名を設定します。 -->
+  <welcome-file-list>
+
+    <welcome-file>home.jsp</welcome-file>
+  </welcome-file-list><!-- 最初に表示するJSPファイルを設定します。
+  							初回アクセスで表示させたいJSPファイル名を書く。 -->
+
+<filter><!-- struts2を使うので、以下の設定を書く。 -->
+
+	<filter-name>struts2</filter-name>
+	<filter-class>org.apache.struts2.deispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+</filter>													<!-- ここが間違いやすい -->
+
+
+<filter-mapping>
+
+<filter-name>struts2</filter-name>
+<url-pattern>/*</url-pattern>
+		<!-- struts2の全部を使うってことを意味する。 -->
+</filter-mapping>
+
+
+</web-app>
