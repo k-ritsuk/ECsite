@@ -8,8 +8,6 @@ import org.apache.struts2.interceptor.SessionAware;
 import com.internousdev.ecsite.dao.UserCreateCompleteDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
-
-
 public class UserCreateCompleteAction extends ActionSupport implements SessionAware{
 
 	private String loginUserId;
@@ -24,11 +22,9 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 			session.get("loginPassword").toString(),
 			session.get("userName").toString());
 
-
 		String result = SUCCESS;
 		return result;
 	}
-
 
 	public String getloginUserId(){
 

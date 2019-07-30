@@ -7,15 +7,12 @@ import java.sql.ResultSet;
 import com.internousdev.ecsite.dto.BuyItemDTO;
 import com.internousdev.ecsite.util.DBConnector;
 
-
-
 public class BuyItemDAO {
 
 	DBConnector dbConnector = new DBConnector();
 	Connection connection = dbConnector.getConnection();
 
 	BuyItemDTO buyItemDTO = new BuyItemDTO();
-
 
 	public BuyItemDTO getBuyItemInfo(){
 
@@ -24,7 +21,6 @@ public class BuyItemDAO {
 		try{
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			ResultSet resultSet = preparedStatement.executeQuery();
-
 
 			if(resultSet.next()){
 				buyItemDTO.setId(resultSet.getInt("id"));
@@ -38,6 +34,6 @@ public class BuyItemDAO {
 		}
 		return buyItemDTO;
 
-
 	}
+
 }

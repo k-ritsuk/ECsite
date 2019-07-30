@@ -2,9 +2,7 @@ package com.internousdev.ecsite.action;
 
 import java.sql.SQLException;
 
-
 import java.util.ArrayList;
-
 
 import java.util.Map;
 
@@ -25,14 +23,12 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 
 	public String execute()throws SQLException{
 
-
 		if(!session.containsKey("logi_user_id")){
 
 			return ERROR;
 		}
 
 		if(deleteFlg == null){
-
 
 			String item_transaction_id = session.get("id").toString();
 			String user_master_id = session.get("login_user_id").toString();
@@ -104,12 +100,5 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 		this.message = message;
 
 	}
-
-
-
-
-
-
-
 
 }

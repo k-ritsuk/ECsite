@@ -8,7 +8,6 @@ import java.sql.SQLException;
 import com.internousdev.ecsite.util.DBConnector;
 import com.internousdev.ecsite.util.DateUtil;
 
-
 public class UserCreateCompleteDAO {
 
 	DBConnector dbConnector = new DBConnector();
@@ -39,7 +38,6 @@ public class UserCreateCompleteDAO {
 
 			connection.close();
 		}
-
 
 	}
 

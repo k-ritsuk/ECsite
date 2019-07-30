@@ -7,17 +7,12 @@ import java.sql.ResultSet;
 import com.internousdev.ecsite.dto.LoginDTO;
 import com.internousdev.ecsite.util.DBConnector;
 
-
-
-
 public class LoginDAO {
 
 	DBConnector dbConnector = new DBConnector();
 	Connection connection = dbConnector.getConnection();
 
 	LoginDTO loginDTO = new LoginDTO();
-
-
 
 	public LoginDTO getLoginUserInfo(String loginUserId,String loginPassword){
 
@@ -26,12 +21,10 @@ public class LoginDAO {
 		try{
 
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
-
 			preparedStatement.setString(1, loginUserId);
 			preparedStatement.setString(2, loginPassword);
 
 			ResultSet resultSet = preparedStatement.executeQuery();
-
 
 			if(resultSet.next()){
 				loginDTO.setLoginId(resultSet.getString("login_id"));
@@ -43,7 +36,6 @@ public class LoginDAO {
 				}
 			}
 
-
 		}catch(Exception e){
 
 			e.printStackTrace();
@@ -53,8 +45,5 @@ public class LoginDAO {
 		return loginDTO;
 
 	}
+
 }
-
-
-
-

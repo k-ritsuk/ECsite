@@ -14,7 +14,6 @@ public class MyPageDTO {
 
 	private String insert_date;
 
-
 	public String getId(){
 
 		return id;

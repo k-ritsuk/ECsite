@@ -16,7 +16,6 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 
 	public String execute(){
 
-
 		String result = SUCCESS;
 
 		if(!(loginUserId.equals(""))
@@ -26,13 +25,10 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 				session.put("loginPassword", loginPassword);
 				session.put("userName",userName);
 
-
 		}else{
-
 
 			setErrorMessage("ñ¢ì¸óÕçÄñ⁄Ç™Ç†ÇËÇ‹Ç∑ÅB");
 			result = ERROR;
-
 
 		}
 
@@ -43,7 +39,6 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 	public String getLoginUserId(){
 
 		return loginUserId;
-
 
 	}
 
@@ -89,7 +84,6 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 		this.session = session;
 
 	}
-
 
 	public String getErrorMessage(){
 
