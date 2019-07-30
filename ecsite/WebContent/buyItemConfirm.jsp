@@ -11,7 +11,7 @@
 
 	<meta http-equiv="Content-Script-Type" content="text/javascript" />
 
-	<meta http-equiv="imagetoolbar" content="no" />
+<meta http-equiv="imagetoolbar" content="no" />
 
 	<meta name="description" content="" />
 
