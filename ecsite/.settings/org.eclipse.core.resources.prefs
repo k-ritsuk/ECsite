@@ -1,3 +1,4 @@
 eclipse.preferences.version=1
+encoding//sql/ecsite.sql=UTF-8
 encoding//src/com/internousdev/ecsite/action/MyPageAction.java=UTF-8
 encoding//src/com/internousdev/ecsite/action/UserCreateCompleteAction.java=UTF-8
