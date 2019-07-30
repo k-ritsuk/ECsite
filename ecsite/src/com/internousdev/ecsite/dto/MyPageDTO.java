@@ -1,10 +1,4 @@
 package com.internousdev.ecsite.dto;
-//購入履歴機能の作成
-
-
-
-//DTOクラスは、DAOがDBから取得した値をActionへ戻す時、値を格納するのに利用。
-//DTOクラスには、必要なテーブルのデータのカラムに対応したフィールド変数とgetter/setterのみを定義。
 
 public class MyPageDTO {
 

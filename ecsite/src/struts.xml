@@ -6,118 +6,81 @@
 
 
 <struts>
-			<!-- Strurs2の挙動を設定	name:設定名	value:設定値 -->
-			<constant name="struts.devMode" value="true"/>
-			<package name="com.internousdev.ecsite.action" extends="struts-default">
-					<!-- ↑Actionファイルが保存されているパッケージ名 -->
 
+	<constant name="struts.devMode" value="true"/>
+	<package name="com.internousdev.ecsite.action" extends="struts-default">
 
-				<!-- 最初のHome画面 -->
-	<action name="com.internousdev.ecsite.action.GoHomeAction" method ="execute">
-	<!-- ↑呼び出されるjavaクラスファイルと実行するメソッドを宣言する -->
+		<action name="com.internousdev.ecsite.action.GoHomeAction" method ="execute">
 
-									<!-- ↓Login画面に移るのボタンを作成 -->
 			<result name = "success">home.jsp</result>
-			<!-- 	↑execute()メソッドから送られてきた値によって
-					次に遷移するjspを振り分けます。 -->
-	</action>
+
+		</action>
 
 
-	<!-- Login画面の作成  -->
-	<action name = "HomeAction" class ="com.internousdev.ecsite.action.HomeAction" method = "execute">
-					<!-- ↑home.jspが要求したAction -->
 
-									<!-- ↓ログインID/passを入力画面
-											ログインされていたらbuyItem.jsp
-											に移る。 -->
+		<action name = "HomeAction" class ="com.internousdev.ecsite.action.HomeAction" method = "execute">
+
 			<result name = "login">login.jsp</result>
 			<result name= "success">buyItem.jsp</result>
-								<!-- ↑商品画面に移る -->
-	</action>
+
+		</action>
 
 
-	<!-- 商品画面の作成 -->
-	<action name = "LoginAction" class="com.internousdev.ecsite.action.LoginAction" method = "execute">
-					<!-- ↑login.jspが要求したAction -->
 
+		<action name = "LoginAction" class="com.internousdev.ecsite.action.LoginAction" method = "execute">
 
-									<!-- ↓商品画面に移る -->
 			<result name = "success" >buyItem.jsp</result>
 			<result name = "error" >login.jsp</result>
-								<!--↑ ログインID/passを入力画面に戻る -->
-	</action>
 
-	<!-- 新規ユーザー登録画面 -->
-	<action name="UserCreateAction" class="com.internousdev.ecsite.action.UserCreateAction" method ="execute">
-					<!-- ↑login.jspの中にボタンを作成しておく。 -->
+		</action>
 
+
+		<action name="UserCreateAction" class="com.internousdev.ecsite.action.UserCreateAction" method ="execute">
 
 			<result name="success">userCreate.jsp</result>
-									<!-- ↑新規ユーザー登録画面 -->
-	</action>
-	<!-- 登録内容の確認画面 -->
-	<action name="UserCreateConfirmAction" class="com.internousdev.ecsite.action.UserCreateConfirmAction" method="execute">
-				<!--↑userCreate.jspが要求したAction -->
 
+		</action>
 
-										<!-- ↓登録内容確認画面 -->
+		<action name="UserCreateConfirmAction" class="com.internousdev.ecsite.action.UserCreateConfirmAction" method="execute">
+
 			<result name="success">userCreateConfirm.jsp</result>
 			<result name="error" >userCreate.jsp</result>
-									<!-- ↑新規ユーザー登録画面に戻る -->
 
-	</action>
-	<!-- 登録確定画面 -->
-	<action name="UserCreateCompleteAction" class="com.internousdev.ecsite.action.UserCreateCompleteAction" method="execute">
-					<!-- userCreateConfirm.jspが要求したAction -->
+		</action>
 
+		<action name="UserCreateCompleteAction" class="com.internousdev.ecsite.action.UserCreateCompleteAction" method="execute">
 
 			<result name ="success">userCreateComplete.jsp</result>
-										<!-- ログインID/passを入力画面に戻る -->
 
-	</action>
+		</action>
 
-	<!-- 選択している商品の確認画面 -->
-	<action name="BuyItemAction" class="com.internousdev.ecsite.action.BuyItemAction" method="execute">
-					<!-- ↑buyItem.jspが要求したAction -->
 
-									<!-- 購入手続き完了画面に移行する。-->
+		<action name="BuyItemAction" class="com.internousdev.ecsite.action.BuyItemAction" method="execute">
+
 			<result name="success">buyItemConfirm.jsp</result>
 			<result name="error">buyItem.jsp</result>
-								<!-- 商品画面に戻る -->
 
+		</action>
 
-	</action>
-	<!-- 購入手続き完了画面。-->
-	<action name="BuyItemConfirmAction" class="com.internousdev.ecsite.action.BuyItemConfirmAction" method="execute">
-				<!--↑buyItemConfirm.jspが要求したAction -->
+		<action name="BuyItemConfirmAction" class="com.internousdev.ecsite.action.BuyItemConfirmAction" method="execute">
 
-									<!-- 購入手続き完了画面になった。
-										マイページを確認できるようになった -->
 			<result name="success" >buyItemComplete.jsp</result>
 			<result name="back">buyItem.jsp</result>
-							<!-- 商品画面に戻る -->
-	</action>
-	<!--  購入履歴画面-->
-	<action name="MyPageAction" class="com.internousdev.ecsite.action.MyPageAction" method="execute">
-				<!-- ↑ buyItemComplete.jsp が要求したAction-->
 
-						<!-- 購入した商品を確認画面 -->
+		</action>
+
+		<action name="MyPageAction" class="com.internousdev.ecsite.action.MyPageAction" method="execute">
+
 			<result name="success">myPage.jsp</result>
 			<result name="error">home.jsp</result>
 
-	</action>
-	<!-- 最初の画面に戻る -->
-	<action name="LogoutAction" class="com.internousdev.ecsite.action.LogoutAction" method="execute">
-			<!-- ↑」home.jspが要求したAction -->
-								<!-- 最初の画面になる -->
+		</action>
+
+		<action name="LogoutAction" class="com.internousdev.ecsite.action.LogoutAction" method="execute">
+
 			<result name="success">home.jsp</result>
 
-	</action>
-
-
-
-
-
+		</action>
 
 	</package>
 

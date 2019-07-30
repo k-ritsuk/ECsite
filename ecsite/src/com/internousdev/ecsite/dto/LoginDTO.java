@@ -1,18 +1,11 @@
 package com.internousdev.ecsite.dto;
-//商品を登録、購入する画面作成
-//ログインするときのId、パスワード、ユーザー名を登録
 
 public class LoginDTO {
 
-//DBから取得した情報を格納するため
-	//tableから取得するデータに対応したフィールド変数を宣言
 	private String loginId;
 	private String loginPassword;
 	private String userName;
 	private boolean loginFlg = false;
-	//boolean型とは、trueまたはfalseの
-	//どちらかのデータが必ず入ることが決まっているデータ型。
-
 
 	public String getLoginId(){
 
